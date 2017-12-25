@@ -12,7 +12,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name ="encoded_polyline",indexes = { @Index(name = "my_index", columnList = "trip_id") })
-public class EncodedData implements Serializable {
+public class EncodedData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,11 +25,11 @@ public class EncodedData implements Serializable {
     @Column(name = "last_updated")
     private Date lastUpdated;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
