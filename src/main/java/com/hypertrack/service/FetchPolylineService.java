@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Service("fetchPolylineService")
 public class FetchPolylineService implements ApiService<String,PolylineOutput> {
     public static final Logger logger = LoggerFactory.getLogger(FetchPolylineService.class);
-    @Autowired DataRepository dataRepository;
+    @Autowired private DataRepository dataRepository;
     public PolylineOutput callApi(String tripId){
         PolylineOutput output = new PolylineOutput();
         logger.info("Fetching Record for TripId : "+tripId);

@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value="/polyline")
 public class ApiController {
-    @Autowired
-    private ComputePolylineService computePolylineService;
+    @Autowired private ComputePolylineService computePolylineService;
     @Autowired private FetchPolylineService fetchPolylineService;
 
     @RequestMapping(value = "/store",method = RequestMethod.POST)

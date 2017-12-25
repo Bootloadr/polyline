@@ -22,7 +22,7 @@ import java.util.List;
  */
 @Service("computePolylineService")
 public class ComputePolylineService implements ApiService<ApiInput,ApiOutput> {
-    @Autowired DataRepository dataRepository;
+    @Autowired private DataRepository dataRepository;
     private static final Logger logger = LoggerFactory.getLogger(ComputePolylineService.class);
     private final static double MULTIPLIER = 100000;
     private final static int FIVE_BIT_MASK = 0x1f;
