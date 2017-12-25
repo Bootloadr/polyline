@@ -1,0 +1,32 @@
+package com.hypertrack.rest;
+
+import com.hypertrack.beans.ApiInput;
+import com.hypertrack.beans.ApiOutput;
+import com.hypertrack.service.ComputePolylineService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * @author abhinav
+ * @date 24/12/17
+ */
+
+@RestController
+@RequestMapping(value="/polyline")
+public class ApiController {
+    @Autowired
+    private ComputePolylineService computePolylineService;
+
+    @RequestMapping(value = "/store",method = RequestMethod.POST)
+    public ApiOutput storeData(@RequestBody ApiInput input){
+        return computePolylineService.callApi(input);
+    }
+
+    @RequestMapping(value = "/fetch",method = RequestMethod.GET)
+    public ApiOutput fetchPolyline(@PathVariable String tripId){
+        return new ApiOutput();
+    }
+}
