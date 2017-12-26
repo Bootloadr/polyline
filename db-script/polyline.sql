@@ -1,7 +1,10 @@
 CREATE TABLE `encoded_polyline` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL DEFAULT '',
-  `country` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-commit;
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `created_time` date DEFAULT NULL,
+  `encoded_loc` varchar(255) DEFAULT NULL,
+  `last_updated` date DEFAULT NULL,
+  `trip_id` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_b12cqf828opoalrp9tii5vpi` (`trip_id`),
+  KEY `my_index` (`trip_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
